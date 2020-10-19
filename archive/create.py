@@ -1,22 +1,18 @@
 import os
-import json
 from github import Github
 from search import project
 
+path = project[0]
+folder = project[1]
 
-def createRepo(project):
-    path = project[0]
-    folder = project[1]
+token = ""                    # Enter your access token
 
-    with open('config.json') as config:
-        data = json.load(config)
-    token = data['token']                   # Enter your access token
+g = Github(token)
+user = g.get_user()
+login = user.login
+repo = user.create_repo(folder)
 
-    g = Github(token)
-    user = g.get_user()
-    login = user.login
-    repo = user.create_repo(folder)
-
+def createRepo(token, login, folder, project):
     for i in project:
         try:
             os.chdir(path)
@@ -38,3 +34,5 @@ def createRepo(project):
         except OSError as e:
             print(f"Unable to created {folder} project")
             print(f'Error:\n{e}')
+
+createRepo(token, login, folder, project)
