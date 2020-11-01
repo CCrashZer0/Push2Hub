@@ -10,7 +10,7 @@ def createRepo(project):
 
     with open('config.json') as config:
         data = json.load(config)
-    token = data['token']                   # Enter your access token
+    token = data['git_token']                   # Enter your access token
 
     g = Github(token)
     user = g.get_user()

@@ -1,1 +1,3 @@
 PyGithub==1.53
+termcolor==1.1.10
+colorama==0.4.4
