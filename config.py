@@ -7,6 +7,7 @@ from termcolor import colored
 
 configData = {
     'git_token': '',
+    'bit_token': '',
     'twitter': '',
     'linkedin': ''
 }
