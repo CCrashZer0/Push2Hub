@@ -1,8 +1,9 @@
 # Push2Hub - Python
-<img src="https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/json%20-%2314354C.svg?&style=for-the-badge&logo=json&logoColor=white"/>
+<img align="left" alt="Python" src="https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white"/>
+<img align="left" alt="JSON" src="https://img.shields.io/badge/json%20-%2314354C.svg?&style=for-the-badge&logo=json&logoColor=white"/>
 <br>
 <br>
+
 Push2Hub will take your completed projects and push them to GitHub.
 
 <br>
