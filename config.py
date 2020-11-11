@@ -8,7 +8,10 @@ from termcolor import colored
 configData = {
     'git_token': '',
     'bit_token': '',
-    'twitter': '',
+    'twitter_consumer_key': '',
+    'twitter_consumer_secret_key': '',
+    'twitter_access_token': '',
+    'twitter_access_secret': '',
     'linkedin': ''
 }
 
