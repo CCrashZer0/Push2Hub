@@ -30,4 +30,4 @@ else:
     print(colored('[+] Configuration file not located', 'red'))
     createConfig(configData)
     time.sleep(2)
-    print(colored('[+] Creating configuration file ','green'))
+    print(colored('[+] Creating configuration file ', 'green'))

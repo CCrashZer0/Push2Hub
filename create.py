@@ -4,6 +4,7 @@ from github import Github
 from search import project
 
 
+
 def createRepo(project):
     path = project[0]
     folder = project[1]
@@ -16,7 +17,12 @@ def createRepo(project):
     user = g.get_user()
     login = user.login
     repo = user.create_repo(folder)
+    link = f'https://github.com/{login}/{folder}.git'
 
+    fileLink = open("link.txt", "w")
+    fileLink.write(link)
+    fileLink.close()
+    
     for i in project:
         try:
             os.chdir(path)
@@ -27,7 +33,7 @@ def createRepo(project):
 
             os.system('git init')
             os.system('git add .')
-            os.system(f'git remote add origin https://github.com/{login}/{folder}.git')
+            os.system(f'git remote add origin {link}')
             os.system('git commit -m "Initial commit made by Push2Hub"')
             os.system('git push -u origin master')
 

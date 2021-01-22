@@ -4,9 +4,10 @@ import os
 global project
 project = []
 
+
 def searchForCompleted(args, project):
 
-    exclude = set([".git","images"])
+    exclude = set([".git", "images"])
 
     for root, dirs, files in os.walk(args.path, topdown=True):
         [dirs.remove(d) for d in list(dirs) if d in exclude]
