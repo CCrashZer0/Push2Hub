@@ -1,8 +1,8 @@
 import os
 import json
 import time
-from colorama import init 
-from termcolor import colored 
+from colorama import init
+from termcolor import colored
 
 
 configData = {
@@ -19,12 +19,13 @@ configData = {
 def createConfig(configData):
 
     f = json.dumps(configData, indent=2)
-    with open('config.json', 'w') as configFile:
+    with open('./config/config.json', 'w') as configFile:
         configFile.write(f)
         configFile.close()
 
-init() 
-if os.path.exists("./config.json"):
+
+init()
+if os.path.exists("./config/config.json"):
     print(colored('[+] Configuration file already exists', 'green'))
 else:
     print(colored('[+] Configuration file not located', 'red'))

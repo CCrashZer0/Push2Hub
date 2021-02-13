@@ -9,7 +9,7 @@ def createRepo(project):
     path = project[0]
     folder = project[1]
 
-    with open('config.json') as config:
+    with open('./config/config.json') as config:
         data = json.load(config)
     token = data['git_token']                   # Enter your access token
 
@@ -27,7 +27,7 @@ def createRepo(project):
         try:
             os.chdir(path)
 
-            f = open(".gitignore","w+")         # Create the gitignore file
+            f = open(".gitignore", "w+")         # Create the gitignore file
             f.write("complete.txt")             # Add the complete.txt file to the gitignore file
             f.close()                           # Close and save the changes to the file.
 
@@ -44,3 +44,5 @@ def createRepo(project):
         except OSError as e:
             print(f"Unable to created {folder} project")
             print(f'Error:\n{e}')
+  
+    config.close()
