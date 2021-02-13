@@ -1,28 +1,32 @@
+import os
 import json
 import tweepy
-from colorama import init 
-from termcolor import colored 
 
 
 def post_to_twitter():
-    with open('config.json') as config:
-        creds = json.load(config)
+    if os.path.exists(".\link.txt"):
+        os.remove("link.txt")
+
+    with open('./config/config.json') as config:
+        data = json.load(config)
 
     try:
         linkText = open("link.txt", "r+")
         link = linkText.read()
     except FileNotFoundError as err:
-        print(colored(f'[+] {err}', 'red'))
+        print(f'[+] {err}')
     
     try:
-        auth = tweepy.OAuthHandler(creds["twitter_consumer_key"], creds["twitter_consumer_secret_key"])
-        auth.set_access_token(creds["twitter_access_token"], creds["twitter_access_secret"])
+        auth = tweepy.OAuthHandler(data["twitter_consumer_key"], data["twitter_consumer_secret_key"])
+        auth.set_access_token(data["twitter_access_token"], data["twitter_access_secret"])
         api = tweepy.API(auth)
-        tweet_text = f"Hey yall I am working on something new. Why don't you head over to my GitHub and check it out.\n{link}\nThis tweet brought to you by push2hub\n#python #codingisfun #automation"
+        tweet_text = f"Hey everyone I have something new for you. Why don't you head over to my GitHub and check it out.\n{link}\nThis tweet brought to you by push2hub\n#python #codingisfun #automation"
         api.update_status(tweet_text)
-        print(colored('[+] Messaged posted to Twitter', 'green'))
+        print(f'[+] Messaged posted to Twitter')
     except tweepy.error.TweepError as e:
-        print(colored(f'Your tweepy error is listed below!\n{e}', 'red'))
-# post_to_twitter(link)
+        print(f'Your tweepy error is listed below!\n{e}')
+    
+
+# post_to_twitter()
 
 
