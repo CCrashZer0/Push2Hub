@@ -12,7 +12,12 @@ configData = {
     'twitter_consumer_secret_key': '',
     'twitter_access_token': '',
     'twitter_access_secret': '',
-    'linkedin': ''
+    'linkedin': '',
+    "reddit_user_agent": "",
+    "reddit_redirect_uri": "http://localhost:8080",
+    "reddit_id": "",
+    "reddit_secret": "",
+    "reddit_refresh_token": ""
 }
 
 

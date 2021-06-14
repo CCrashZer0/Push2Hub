@@ -1,4 +1,4 @@
-import os
+    import os
 import json
 from github import Github
 from search import project
@@ -27,7 +27,7 @@ def createRepo(project):
         try:
             os.chdir(path)
 
-            f = open(".gitignore", "w+")         # Create the gitignore file
+            f = open(".gitignore", "w+")        # Create the gitignore file
             f.write("complete.txt")             # Add the complete.txt file to the gitignore file
             f.close()                           # Close and save the changes to the file.
 

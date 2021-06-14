@@ -2,3 +2,5 @@ PyGithub==1.53
 termcolor==1.1.10
 colorama==0.4.4
 tweepy==3.9.0
+praw==7.2.0
+prawcore==2.2.0

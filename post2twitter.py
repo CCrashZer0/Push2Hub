@@ -4,8 +4,8 @@ import tweepy
 
 
 def post_to_twitter():
-    if os.path.exists(".\link.txt"):
-        os.remove("link.txt")
+    # if os.path.exists(".\link.txt"):
+    #     os.remove("link.txt")
 
     with open('./config/config.json') as config:
         data = json.load(config)
